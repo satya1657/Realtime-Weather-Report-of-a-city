@@ -24,7 +24,7 @@ app.post('/example', (req, res) => {
     res.redirect("/weather");
     
 });
-
+var port = process.env.PORT || 8000;
 
 var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -47,6 +47,6 @@ app.get("/weather", (req, res) => {
 });  
 });
 
-app.listen(8000,()=>{
+app.listen(port,()=>{
     console.log("listening... at 8000");
 });
