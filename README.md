@@ -6,6 +6,6 @@ I deployed it on Heroku.
 
 Link (deployed on heroku) - https://realtime-weather.herokuapp.com/
 
-I used a very simple frontend here. I just want to learn how to work with APIs in nodejs.
+I used a very simple frontend here. I just want to learn how to work with APIs in nodejs in this project.
 
 ![user interface](https://github.com/satya1657/Realtime-Weather-Report-of-a-city/blob/master/UI.png)
