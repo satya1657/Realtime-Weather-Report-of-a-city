@@ -18,10 +18,10 @@ app.get("/msg", (req,res)=>{
 
 let city_name="";
 
-app.post('/example', (req, res) => {
+app.post('/', (req, res) => {
     
     city_name=req.body.cname;
-    res.redirect("/weather");
+    res.redirect("/api");
     
 });
 var port = process.env.PORT || 8000;
@@ -29,7 +29,7 @@ var port = process.env.PORT || 8000;
 var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var d = new Date();
-app.get("/weather", (req, res) => {
+app.get("/api", (req, res) => {
      
    // console.log("city name is : "+city_name);
     request.get(`http://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=4696f036ec88019f3d3c9e430d4e15b6`, (err, response, body) => {
