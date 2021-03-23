@@ -1,0 +1,66 @@
+form{
+    
+    height: 10%;
+    align-self: center;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+.maindiv{
+    background-color: rgb(47, 44, 49);
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Lato', sans-serif;
+}
+.left{
+    width: 50%;
+    float: left;
+    text-align: center;
+    
+    font-family: 'Lato', sans-serif;
+}
+.right{
+    float: right;
+    width: 50%;
+    text-align: center;
+   
+    font-family: 'Lato', sans-serif;
+}
+.detais{
+    color: rgb(15, 15, 15);
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+.image{
+    background-color: aquamarine;
+}
+span{
+    color: rgb(240, 9, 47);
+}
+.pic{
+    text-align: center;
+    align-items: center; 
+}
+#pic .fas{
+    animation: fas-anime 3s linear infinite alternate;
+}
+
+@keyframes fas-anime{
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.foot {
+    
+    position: fixed;
+    left: 0;
+    line-height: 0.8;
+    bottom: 0rem;
+    width: 100%;
+    background-color: rgb(25, 26, 31);
+    color: white;
+    text-align: center;
+ }

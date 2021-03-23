@@ -1,0 +1,96 @@
+<html>
+    <head> 
+        <link href= 'https://fonts.googleapis.com/css?family=Sofia' 
+              rel='stylesheet' /> 
+              <link rel="preconnect" href="https://fonts.gstatic.com">
+              <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">      
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Oranienbaum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head> 
+    <body onload=display_ct();>
+        <div class="maindiv">
+              <h1>Realtime Weather Report </h1>
+        </div>
+        
+        <form action="http://localhost:8000/example" method="POST">
+            City Name: <input type="text" name="cname" id = "cname">
+           <button type="submit">Search</button>
+          </form>
+
+        <div >
+            <div class="detais"><h3><i class='fas  fa-map-marker-alt' style="font-size: 1.5rem;"></i>   <span style="text-transform: uppercase;">{%cname%}</span></h3>
+                 <p id="ct"></p>   
+            </div>
+            
+
+            <div class="pic" id="pic"  ><i class="fas fa-cloud" style="font-size:3rem;color:lightblue; text-align: center;"></i> </div>
+            
+              <div class="left">
+                
+                    <h3>Temperature : <span>{%temp%}°C</span></h3>
+                    <h3>Max Temperature : <span>{%maxtemp%}°C</span></h3>
+                    <h3>Min Temperature : <span>{%mintemp%}°C</span></h3>
+                    <h3>Humidity : <span>{%hum%}%</span></h3>
+                    <h3>Pressure : <span>{%press%}mbar</span></h3>
+                    <h3>Visibility : <span>{%vis%}Km</span></h3>
+              </div>
+              <div class="right">
+                <h3>Wind speed: <span>{%wind%}Km/h</span></h3>
+                <h3>SunRise : <span>{%sunr%}</span></h3>
+                <h3>SunSet : <span>{%suns%}</span></h3>
+                <h3>SeaLevel : <span>{%seal%}ft</span></h3>
+                <h3>Main : <span>{%main%}</span></h3>
+                <h3>Description : <span>{%desc%}</span></h3>
+                
+            </div>
+        </div>
+    <script>
+        function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct()',refresh)
+}
+function display_ct() {
+    var x = new Date()
+    var x1=x.toUTCString();// changing the display to UTC string
+    document.getElementById('ct').innerHTML = x1;
+    tt=display_c();
+     }
+
+              let weathercon = document.getElementById('pic');
+
+              const status = "{%tempstatus%}";
+              if(status=="Sunny")
+              {
+                  weathercon.innerHTML = "<i class='fas fa-sun' style='font-size:3rem;color:Yellow; text-align: center;'></i>";
+            }else if(status=="Clouds")
+              {
+                  weathercon.innerHTML = "<i class='fas fa-cloud' style='font-size:3rem;color:lightblue; text-align: center;'></i>";
+            }else if(status=="Smoke")
+              {
+                  weathercon.innerHTML = "<i class='fas fa-smog' style='font-size:3rem;color:rgb(143, 153, 165);; text-align: center;'></i>";
+            }else if(status=="Clear")
+              {
+                  weathercon.innerHTML = "<i class='fas fa-sun' style='font-size:3rem;color:rgb(248, 199, 37); text-align: center;'></i>";
+            }else if(status=="Rainy")
+              {
+                  weathercon.innerHTML = "<i class='fas fa-cloud-sun-rain' style='font-size:3rem;color:rgb(142, 199, 238); text-align: center;'></i>";
+            }
+            else 
+              {
+                  weathercon.innerHTML = "<i class='fas fa-cloud' style='font-size:3rem;color:lightblue; text-align: center;'></i>";
+            }
+    </script> 
+        <div class="foot">
+                <p>@Satyaprakash</p>
+                <p>IIIT Vadodara</p>
+          </div>
+            
+        
+        
+    </body>
+   
+</html>
